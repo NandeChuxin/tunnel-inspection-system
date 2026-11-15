@@ -1,0 +1,20 @@
+/* ============================================================================
+ * 工位 04 人工复核 · 面板结构（HTML：待复核计数 rvMeter / 队列 rvList / 刷新队列 rvRefresh）
+ * 出处：C:\Users\17355\.zcode\workspace\default\tunnel-inspection-system\docs\prototype-holo-core.html  第 1283–1298 行（原文照搬，仅加本表头）
+ * ========================================================================== */
+    <!-- ===== 工位 04 · 人工复核（点一条 → 弹窗：图片 + 方案 + 审核人 + 通过/驳回） ===== -->
+    <section class="panel p-review" data-p="review">
+      <div class="cone" aria-hidden="true"></div>
+      <div class="ph" title="悬停转到正前 · 点击抬到核心正上方（再点收起）">
+        <span class="no">04</span><h2>人工复核</h2>
+        <span class="meter" id="rvMeter">待复核 --</span>
+      </div>
+      <div class="pb">
+        <div class="rv-list" id="rvList"><div class="lab-none">正在读取待复核队列…</div></div>
+        <div class="ops">
+          <button class="btn" type="button" id="rvRefresh">刷新队列</button>
+          <span class="rv-note">审核人：工作台复核员</span>
+        </div>
+      </div>
+    </section>
+

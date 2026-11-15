@@ -1,0 +1,15 @@
+[
+ {
+  "tag": "B-白华析出-右边墙-2.5-",
+  "nDetections": 1,
+  "detected": "白华析出",
+  "subtype": "钙质析出",
+  "levelNo": 2,
+  "level": "2级-中等",
+  "sector": "右边墙",
+  "physical": {
+   "面积": "2.50m²"
+  },
+  "confidence": 0.9
+ }
+]

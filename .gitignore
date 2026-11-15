@@ -1,0 +1,63 @@
+# ---------------- 依赖 ----------------
+node_modules/
+
+# ---------------- 临时、缓存、日志 ----------------
+tmp/
+.cache/
+.workbuddy/
+*.log
+*.genie
+deploy/
+
+# ---------------- 本地数据库 ----------------
+*.db
+*.db-journal
+
+# ---------------- 大体积二进制（图片/视频/文档/权重，不入库） ----------------
+*.png
+*.jpg
+*.jpeg
+*.bmp
+*.gif
+*.webp
+*.mp4
+*.pdf
+*.docx
+*.pptx
+*.xlsx
+*.onnx
+*.pt
+*.zip
+
+# 演示页依赖的少量示例图保留
+!docs/assets/*.jpg
+
+# ---------------- 数据集与样本（图片、标注、生成样本，不入库） ----------------
+yolo-workspace/dataset/
+yolo-workspace/dataset-6class/
+yolo-workspace/dataset-6class-plus/
+yolo-workspace/dataset-6class-realval/
+yolo-workspace/dataset-grouped/
+yolo-workspace/tack-meta/
+yolo-workspace/tack-raw/
+yolo-workspace/识别结果/
+yolo-workspace/weights/
+backend/data/annotate/
+backend/data/media/
+backend/data/real-dataset/
+backend/data/synthetic/
+backend/data/train/**
+!backend/data/train/metrics.json
+!backend/data/train/eval-metrics.json
+!backend/data/train/ablation.json
+backend/data/train-real/**
+!backend/data/train-real/eval-real.json
+
+# ---------------- LabVIEW 集成：仅保留文本工程文件 ----------------
+labview-integration/screenshots/
+labview-integration/.runtime/
+labview-integration/*.vi
+
+# Python 缓存
+__pycache__/
+*.pyc

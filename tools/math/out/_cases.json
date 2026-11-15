@@ -1,0 +1,1 @@
+[{"tag": "B-白华析出-右边墙-2.5-", "imageW": 640, "roi": {"edgeDensity": 0.2, "darkRatio": 0.2, "brightRatio": 0.7, "textureVar": 0.3, "hueShift": 0.0, "elongation": 2.0, "fillRatio": 0.55, "linearity": 0.5, "widthPx": 5.0, "lengthPx": 16718.367346938776, "orientation": "diagonal", "angle": 90, "bbox": [0.2, 0.3, 5.0, 16718.367346938776]}, "sensors": {"humidity": 60}}]

@@ -1,0 +1,22 @@
+{
+ "scope": "real-only val（剔除全部合成图）",
+ "weights": "D:\\隧道检测\\tunnel-inspection-system\\yolo-workspace\\runs\\6class-yolov8n\\weights\\best.pt",
+ "data": "D:\\隧道检测\\tunnel-inspection-system\\yolo-workspace\\dataset-6class-realval\\data.yaml",
+ "images": 66,
+ "imgsz": 640,
+ "mAP50": 0.425331146177423,
+ "mAP50-95": 0.24712771495078859,
+ "precision": 0.5402189604194189,
+ "recall": 0.41640971114655323,
+ "per_class_AP50": {
+  "Spalling": 0.29334681425017317,
+  "Crack": 0.318287346108892,
+  "Leakage": 0.664359278173204
+ },
+ "per_class_mAP50_95": {
+  "Spalling": 0.2030878574525306,
+  "Crack": 0.1517311385319831,
+  "Leakage": 0.386564148867852
+ },
+ "note": "衬砌错台 / 白华析出 在实拍集中无标注实例，其 AP 为 0 属预期；这两类的真实世界性能尚未验证。"
+}

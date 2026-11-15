@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>隧途明鉴 · 隧道病害智能检测与分析系统</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%2032%2032'%3E%3Crect%20width='32'%20height='32'%20rx='7'%20fill='%232F6B4F'/%3E%3Cpath%20d='M7%2024L7%2016A9%209%200%200%201%2025%2016L25%2024'%20fill='none'%20stroke='%23ffffff'%20stroke-width='2.6'%20stroke-linecap='round'/%3E%3Ccircle%20cx='16'%20cy='19'%20r='2.2'%20fill='%23C08A3E'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <div class="logo">隧</div>
+    <div>
+      <h1>隧途明鉴 — 隧道病害智能检测与分析系统</h1>
+      <p class="sub">基于车载多感融合 · 光电成像采集 · 智能诊析决策全流程闭环</p>
+    </div>
+  </div>
+  <div class="topbar-actions">
+    <select id="tunnelFilter">
+      <option value="青云山隧道">青云山隧道</option>
+      <option value="核桃坪隧道">核桃坪隧道</option>
+    </select>
+    <button class="btn ghost" id="btnTeach">教学展示 · 模块一</button>
+    <button class="btn ghost" id="btnTrain">虚实实训 · 模块二</button>
+    <button class="btn ghost" id="btnPortal">数据库 · 模块四</button>
+    <button class="btn ghost" id="btnLoginUser" title="登录后可维护知识库（teacher/admin）">👤 未登录</button>
+    <button class="btn ghost" id="btnPdf">导出检测报告(PDF)</button>
+    <button class="btn primary" id="btnExcel">导出Excel报告</button>
+  </div>
+</header>
+
+<section class="kpis">
+  <div class="kpi"><span class="num" id="kpiTotal">0</span><span class="label">累计识别病害</span></div>
+  <div class="kpi warn"><span class="num" id="kpiPending">0</span><span class="label">待人工审核</span></div>
+  <div class="kpi ok"><span class="num" id="kpiReviewed">0</span><span class="label">已审核闭环</span></div>
+  <div class="kpi danger"><span class="num" id="kpiSevere">0</span><span class="label">3/4级严重病害</span></div>
+</section>
+
+<main class="grid">
+  <!-- 左列：数据采集中心（照片流 / 视频流） -->
+  <section class="panel" id="panelLive">
+    <div class="panel-head">
+      <h2>数据采集中心</h2>
+      <div class="tabs">
+        <button class="tab active" data-srctab="photo">照片流</button>
+        <button class="tab" data-srctab="video">视频流</button>
+      </div>
+    </div>
+
+    <!-- 传感器实时读数 -->
+    <div class="sensor-row">
+      <div class="sensor"><span class="v" id="sChainage">--</span><span class="l">当前桩号</span></div>
+      <div class="sensor"><span class="v" id="sHum">--</span><span class="l">湿度 %RH</span></div>
+      <div class="sensor"><span class="v" id="sTemp">--</span><span class="l">温度 ℃</span></div>
+      <div class="sensor"><span class="v" id="sVib">--</span><span class="l">振动冲击</span></div>
+      <div class="sensor"><span class="v" id="sGap">--</span><span class="l">断面差 mm</span></div>
+      <div class="sensor"><span class="v" id="sFrames">0</span><span class="l">已分析帧</span></div>
+    </div>
+
+    <!-- ===== 照片流 ===== -->
+    <div id="tabPhoto">
+      <div class="upload-zone" id="photoZone">
+        <input type="file" id="photoInput" accept="image/*" hidden>
+        <div class="uz-icon">📷</div>
+        <b>点击或拖拽上传隧道照片</b>
+        <span>支持 JPG / PNG，上传后自动进行病害识别、生成整治建议</span>
+      </div>
+      <div class="viz" id="photoResultWrap" style="display:none">
+        <h3>识别结果标注</h3>
+        <canvas id="photoCanvas"></canvas>
+      </div>
+      <div id="photoCards"></div>
+    </div>
+
+    <!-- ===== 视频流 ===== -->
+    <div id="tabVideo" style="display:none">
+      <div class="video-controls">
+        <label class="btn ghost" for="videoInput">上传视频文件</label>
+        <input type="file" id="videoInput" accept="video/*" hidden>
+        <button class="btn primary" id="btnLive">▶ 实时传输（摄像头）</button>
+        <input type="text" id="biliUrl" class="url-input" placeholder="粘贴B站视频链接或BV号，如 BV1jP84z8EN3">
+        <button class="btn ghost" id="btnImportBili">导入在线视频</button>
+        <button class="btn danger" id="btnStopVideo" style="display:none">■ 停止分析</button>
+      </div>
+      <div class="viz" id="videoWrap" style="display:none">
+        <h3 id="videoTitle">逐帧分析（当前帧）</h3>
+        <video id="videoEl" playsinline muted style="display:none"></video>
+        <canvas id="videoCanvas"></canvas>
+        <div class="video-meta" id="videoMeta">等待视频源…</div>
+      </div>
+      <div id="videoCards"></div>
+    </div>
+
+    <div class="viz" style="margin-top:12px">
+      <h3>融合置信度（最近一次识别）</h3>
+      <canvas id="confCanvas" width="460" height="210"></canvas>
+    </div>
+
+    <div class="panel-head subhead"><h2>数据流日志</h2></div>
+    <div class="log" id="log"></div>
+  </section>
+
+  <!-- 右列：病害台账与审核 -->
+  <section class="panel">
+    <div class="panel-head">
+      <h2>病害台账与审核工作台</h2>
+      <div class="tabs" id="statusTabs">
+        <button class="tab active" data-status="">全部</button>
+        <button class="tab" data-status="待审核">待审核</button>
+        <button class="tab" data-status="已审核">已审核</button>
+        <button class="tab" data-status="已驳回">已驳回</button>
+      </div>
+    </div>
+    <div class="table-wrap">
+      <table class="defect-table">
+        <thead>
+          <tr>
+            <th>病害ID</th><th>来源</th><th>类型</th><th>等级</th><th>桩号</th><th>环向方位</th>
+            <th>置信度</th><th>状态</th><th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="defectBody"></tbody>
+      </table>
+    </div>
+    <div class="viz-row" style="margin-top:12px">
+      <div class="viz"><h3>病害类型分布</h3><canvas id="typeChart" width="320" height="190"></canvas></div>
+      <div class="viz"><h3>等级分布</h3><canvas id="levelChart" width="320" height="190"></canvas></div>
+    </div>
+  </section>
+</main>
+
+<!-- 病害详情 / 审核弹窗 -->
+<div class="modal-mask" id="modalMask">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="mTitle">病害详情</h3>
+      <button class="close" id="mClose">×</button>
+    </div>
+    <div class="modal-body" id="mBody"></div>
+  </div>
+</div>
+
+<!-- ===== 模块一：可解释AI教学展示（双通道对比） ===== -->
+<section class="teach-page" id="teachPage" style="display:none">
+  <div class="panel teach-head">
+    <div>
+      <h2>模块一 · 可解释AI教学展示</h2>
+      <p class="teach-sub">左栏：传统 CV 链路（步骤可视化 + 滑杆调参，仅重算受影响步骤） · 右栏：检测模型结果（检测框 + 判定依据热力图）</p>
+    </div>
+    <div class="teach-actions">
+      <select id="heatMethod">
+        <option value="auto">热力图：自动（Grad-CAM→Eigen 回退）</option>
+        <option value="eigen">热力图：Eigen-CAM</option>
+        <option value="gradcam">热力图：Grad-CAM</option>
+      </select>
+      <button class="btn primary" id="btnTeachExport">⬇ 导出对比讲解图</button>
+      <button class="btn ghost" id="btnTeachBack">返回监控台</button>
+    </div>
+  </div>
+
+  <div class="teach-upload" id="teachZone">
+    <input type="file" id="teachInput" accept="image/*" hidden>
+    <div>
+      <b>点击或拖拽上传隧道影像，开始可解释检测</b>
+      <span>一次推理同时返回：① CLAHE ② 高斯 ③ Canny ④ Otsu 四步中间图 + 判定依据热力图（α=0.45 叠加）</span>
+    </div>
+  </div>
+
+  <div class="teach-grid">
+    <!-- 左栏：传统 CV 链路 -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>传统 CV 链路（可调参）</h2>
+        <span class="teach-note" id="teachRecomputeNote">上传图片后可调参</span>
+      </div>
+      <div class="param-list">
+        <div class="param">
+          <label>CLAHE clipLimit <b id="vClip">2.0</b></label>
+          <input type="range" id="pClip" min="0.5" max="4" step="0.1" value="2">
+        </div>
+        <div class="param">
+          <label>CLAHE 网格 <b id="vTile">8×8</b></label>
+          <input type="range" id="pTile" min="2" max="16" step="1" value="8">
+        </div>
+        <div class="param">
+          <label>高斯核 <b id="vKernel">5×5</b></label>
+          <input type="range" id="pKernel" min="3" max="9" step="2" value="5">
+        </div>
+        <div class="param">
+          <label>Canny/Sobel 阈值 <b id="vCanny">70</b></label>
+          <input type="range" id="pCanny" min="10" max="200" step="1" value="70">
+        </div>
+        <div class="param row">
+          <label>Otsu 自适应分割</label>
+          <input type="checkbox" id="pOtsu" checked>
+        </div>
+      </div>
+      <div class="step-grid" id="stepGrid">
+        <figure class="step"><figcaption>① CLAHE 增强 <i data-step="clahe"></i></figcaption><img id="stepClahe" alt="CLAHE"></figure>
+        <figure class="step"><figcaption>② 高斯滤波 <i data-step="gaussian"></i></figcaption><img id="stepGaussian" alt="高斯"></figure>
+        <figure class="step"><figcaption>③ Canny 边缘 <i data-step="canny"></i></figcaption><img id="stepCanny" alt="Canny"></figure>
+        <figure class="step"><figcaption>④ Otsu 分割 <i data-step="otsu"></i></figcaption><img id="stepOtsu" alt="Otsu"></figure>
+      </div>
+    </section>
+
+    <!-- 右栏：检测模型结果 -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>检测模型判定依据</h2>
+        <label class="switch-row"><input type="checkbox" id="heatToggle" checked> 热力图叠加（α=0.45）</label>
+      </div>
+      <div class="teach-view" id="teachView">
+        <img id="viewBase" alt="原图">
+        <canvas id="viewBoxes"></canvas>
+      </div>
+      <div class="teach-meta" id="teachMeta">等待上传影像…</div>
+      <div id="teachCards"></div>
+    </section>
+  </div>
+</section>
+
+<!-- ===== 模块二：虚实结合实训台 ===== -->
+<section class="train-page" id="trainPage" style="display:none">
+  <div class="panel train-head">
+    <div>
+      <h2>模块二 · 虚实结合实训台</h2>
+      <p class="teach-sub">左侧：参数探究实训（5 滑杆 debounce 300ms 联动 · 操作轨迹可回放 · 结束生成 PDF 实验报告） · 右侧：病害样本合成器（合成样本仅用于实训演示与数据增强，不与科研实测数据混用）</p>
+    </div>
+    <div class="teach-actions">
+      <button class="btn primary" id="btnTrainReport" disabled>⬇ 生成实验报告 PDF</button>
+      <button class="btn ghost" id="btnTrainBack">返回监控台</button>
+    </div>
+  </div>
+
+  <div class="train-grid">
+    <!-- ========== 左：实训会话 / 参数探究 ========== -->
+    <section class="panel">
+      <div class="panel-head">
+        <h2>实训会话 · 参数探究模式</h2>
+        <span id="trSessionState" class="badge st-wait">未开始</span>
+      </div>
+      <div class="tr-setup">
+        <input id="trStudent" class="url-input" placeholder="学生姓名（默认：学生）" maxlength="20">
+        <input id="trTunnelName" class="url-input" value="实训隧道" maxlength="20">
+        <label class="btn ghost" for="trSampleInput">样本图(可选)</label>
+        <input type="file" id="trSampleInput" accept="image/*" hidden>
+        <button class="btn primary" id="btnTrStart">开始会话</button>
+        <button class="btn danger" id="btnTrEnd" disabled>结束会话</button>
+      </div>
+      <div class="teach-note" id="trMeta">默认使用内置演示样本（合成样本）。开始会话后即可拖动滑杆探究参数对检测结果的影响。</div>
+
+      <!-- 5 个探究参数滑杆 -->
+      <div class="param-list tr-params">
+        <div class="param">
+          <label>置信度阈值（检出灵敏度） <b id="vTConf">0.55</b></label>
+          <input type="range" id="qConf" min="0.10" max="0.95" step="0.05" value="0.55" disabled>
+        </div>
+        <div class="param">
+          <label>CLAHE clipLimit（对比度限制） <b id="vTClip">2.0</b></label>
+          <input type="range" id="qClip" min="0.5" max="4" step="0.1" value="2.0" disabled>
+        </div>
+        <div class="param">
+          <label>CLAHE 网格 gridSize <b id="vTTile">8×8</b></label>
+          <input type="range" id="qTile" min="2" max="16" step="1" value="8" disabled>
+        </div>
+        <div class="param">
+          <label>高斯核大小 <b id="vTKernel">5×5</b></label>
+          <input type="range" id="qKernel" min="3" max="9" step="2" value="5" disabled>
+        </div>
+        <div class="param">
+          <label>Canny/Sobel 低阈值 <b id="vTCanny">70</b></label>
+          <input type="range" id="qCanny" min="10" max="200" step="1" value="70" disabled>
+        </div>
+      </div>
+
+      <div class="tr-result">
+        <div class="tr-imgwrap" id="trImgWrap"><img id="trThumb" alt="结果缩略图" style="display:none"></div>
+        <div class="tr-metrics">
+          <div class="tr-metric"><span class="num" id="trCount">--</span><span class="label">检出数量</span></div>
+          <div class="tr-metric"><span class="num" id="trAvg">--</span><span class="label">平均置信度</span></div>
+          <div class="tr-metric"><span class="num" id="trMs">--</span><span class="label">推理耗时 ms</span></div>
+          <div class="tr-metric"><span class="num" id="trTask">--</span><span class="label">任务 ID</span></div>
+        </div>
+      </div>
+      <div class="tr-byclass" id="trByClass"></div>
+
+      <div class="panel-head subhead">
+        <h2>操作轨迹（点击行 = 回放该参数快照）</h2>
+        <span class="teach-note" id="trRunNote"></span>
+      </div>
+      <div class="table-wrap tr-timeline">
+        <table class="defect-table">
+          <thead><tr><th>#</th><th>时间</th><th>置信度</th><th>CLAHE</th><th>网格</th><th>高斯</th><th>Canny</th><th>检出</th><th>耗时ms</th><th>动作</th></tr></thead>
+          <tbody id="trTimeline"></tbody>
+        </table>
+      </div>
+
+      <div class="tr-report">
+        <span class="sec-title" style="margin-top:0">实验报告（PDF · 会话结束或按需生成）</span>
+        <textarea id="trSelfEval" placeholder="学生自评（可选）：写下你对“参数-检出数量”关系的观察结论，将打印进报告。" maxlength="400"></textarea>
+        <div class="teach-note" id="trReportHint">报告内容：会话信息 · 初始参数快照 · 操作轨迹表 · 参数-检出数量对照条形图 · 学生自评 · 教师评语留白。</div>
+      </div>
+    </section>
+
+    <!-- ========== 右：样本合成器 + 样本库 ========== -->
+    <div class="train-right">
+      <section class="panel">
+        <div class="panel-head">
+          <h2>病害样本合成器</h2>
+          <span class="syn-tag">⚠ 合成样本 · 仅实训演示/数据增强</span>
+        </div>
+        <!-- 素材方式 -->
+        <div class="syn-mode-tabs">
+          <button class="tab active" data-synmode="demo">内置演示缺陷池</button>
+          <button class="tab" data-synmode="crop">标注素材裁剪粘贴</button>
+        </div>
+        <div id="synDemoMode">
+          <div class="syn-row">
+            <label>病害类别
+              <select id="synKind">
+                <option value="">随机混合（5 类）</option>
+                <option>裂缝</option><option>渗漏水</option><option>剥落掉块</option><option>衬砌错台</option><option>白华析出</option>
+              </select>
+            </label>
+            <label>严重等级
+              <select id="synLevel">
+                <option value="0">随机 1~4</option><option value="1">1 轻微</option><option value="2" selected>2 中等</option>
+                <option value="3">3 严重</option><option value="4">4 危及安全</option>
+              </select>
+            </label>
+          </div>
+          <div class="teach-note">合成流程：背景（程序化衬砌纹理）→ 演示缺陷像素绘制 → 随机 1~3 处粘贴 → 透视微变换(±5°) / 亮度对比(±20%) / 伽马(0.8~1.2) / 模糊 / 高斯噪声(σ=0.02)。</div>
+        </div>
+        <div id="synCropMode" style="display:none">
+          <div class="syn-crop-row">
+            <label class="btn ghost" for="synSrcInput">+ 上传病害素材原图(PNG)</label>
+            <input type="file" id="synSrcInput" accept="image/*" hidden>
+            <span class="teach-note" id="synSrcInfo">未选择素材</span>
+          </div>
+          <div id="synCropEditor" style="display:none">
+            <div class="syn-crop-flex">
+              <img id="synSrcPrev" alt="素材预览">
+              <div class="syn-bbox">
+                <label>病害类别 <select id="synCropClass"><option>裂缝</option><option>渗漏水</option><option>剥落掉块</option><option>衬砌错台</option><option>白华析出</option></select></label>
+                <label>等级 <select id="synCropLevel"><option value="1">1 轻微</option><option value="2" selected>2 中等</option><option value="3">3 严重</option><option value="4">4 危及安全</option></select></label>
+                <span class="teach-note">裁剪框（% 相对素材宽高，服务端按 YOLO 框裁剪 + 羽化）</span>
+                <div class="syn-bbox4">
+                  <input id="bbX" type="number" min="0" max="100" value="0" step="1"><span>x%</span>
+                  <input id="bbY" type="number" min="0" max="100" value="0" step="1"><span>y%</span>
+                  <input id="bbW" type="number" min="1" max="100" value="100" step="1"><span>w%</span>
+                  <input id="bbH" type="number" min="1" max="100" value="100" step="1"><span>h%</span>
+                </div>
+                <button class="btn ghost" id="btnSynAddSrc">＋ 加入病害来源</button>
+                <span class="teach-note">提示：若整张素材即为病害区，保持 0/0/100/100；平台检测框即为 YOLO 标注框，可参考其归一化坐标填写。</span>
+              </div>
+            </div>
+          </div>
+          <div class="syn-sources" id="synSources"></div>
+        </div>
+        <!-- 批量参数 -->
+        <div class="syn-cfg">
+          <label>数量 <select id="synCount"><option value="20" selected>20 张</option><option value="30">30 张</option><option value="40">40 张</option><option value="50">50 张</option></select></label>
+          <label>尺寸 <select id="synSize"><option value="512x384" selected>512×384</option><option value="640x480">640×480</option></select></label>
+          <button class="btn primary" id="btnSynRun">批量合成并入库</button>
+        </div>
+        <div class="teach-note" id="synBusy"></div>
+        <div id="synBatch"></div>
+        <div class="syn-warn">⚠ 合规说明：本合成器输出样本仅用于【实训演示与数据增强】；文件与数据库均标注 source=synthetic / “合成样本”，严禁与科研实测数据混用。</div>
+      </section>
+
+      <section class="panel">
+        <div class="panel-head">
+          <h2>合成样本库（分页浏览）</h2>
+          <div class="tabs">
+            <button class="tab" id="libPrev">◀ 上一页</button>
+            <span class="teach-note" id="libInfo">--</span>
+            <button class="tab" id="libNext">下一页 ▶</button>
+          </div>
+        </div>
+        <div id="libGrid" class="lib-grid"><div class="teach-note">暂无合成样本，先在上方批量生成。</div></div>
+      </section>
+    </div>
+  </div>
+</section>
+
+
+<section class="portal-page" id="portalPage" style="display:none">
+  <div class="panel res-head">
+    <div>
+      <h2>模块四 · 数据库</h2>
+      <p class="teach-sub">SQLite 数据资产一站式查看：① 样本库在线浏览（网格图库 · 筛选 · 详情页聚合原图/检测框/热力图/诊断/规范条文） · ② 分级知识库维护（knowledge_base 查表驱动诊断建议） · ③ 数据库浏览（8 张公共表结构 + 行数据检索，teacher/admin 只读） · 角色权限（student 只读 / teacher 维护知识库 / admin 管理用户）</p>
+    </div>
+    <div class="teach-actions">
+      <span class="teach-note" id="pgRoleTag">样本/知识浏览无需登录；数据库浏览与知识库维护需 teacher/admin 登录</span>
+      <button class="btn ghost" id="btnPortalBack">返回监控台</button>
+    </div>
+  </div>
+
+  <!-- ① 样本库浏览 -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>① 样本库在线浏览</h2>
+      <span class="teach-note" id="pgNote">点击卡片打开详情：原图 + 检测框 + 热力图 + 诊断结果 + 知识库条文。</span>
+    </div>
+    <div class="an-cfg pl-filter">
+      <select id="selPLType"><option value="">病害类型：全部</option><option>裂缝</option><option>渗漏水</option><option>剥落掉块</option><option>衬砌错台</option><option>白华析出</option></select>
+      <select id="selPLSource"><option value="">来源：全部</option><option value="synthetic">合成样本</option><option value="real">真实图像</option></select>
+      <select id="selPLLevel"><option value="">等级：全部</option><option value="1">1级-轻微</option><option value="2">2级-中等</option><option value="3">3级-严重</option><option value="4">4级-危及安全</option></select>
+      <select id="selPLTunnel"><option value="">隧道：全部</option></select>
+      <button class="btn primary" id="btnPLFilter">检索</button>
+      <button class="btn ghost" id="btnPLDemo">▶ 一键生成样本数据（合成样本 12 张 → 检测自动入库）</button>
+      <button class="btn ghost" id="btnPLReload">刷新</button>
+    </div>
+    <div class="pg-grid" id="pgGrid"><div class="an-pool-empty">样本库为空：可点「一键生成样本数据」用内置 20 张合成样本跑检测入库，或到模块二批量合成样本。</div></div>
+    <div class="an-cfg" style="margin-top:8px">
+      <button class="btn ghost" id="btnPLPrev">◀ 上一页</button>
+      <span class="teach-note" id="pgPage">--</span>
+      <button class="btn ghost" id="btnPLNext">下一页 ▶</button>
+    </div>
+  </div>
+
+  <!-- ② 分级知识库维护 -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>② 分级知识库（knowledge_base · 查表驱动诊断建议）</h2>
+      <div class="teach-actions">
+        <select id="selKBType"><option value="">全部类型</option><option>裂缝</option><option>渗漏水</option><option>剥落掉块</option><option>衬砌错台</option><option>白华析出</option></select>
+        <select id="selKBLevel"><option value="">全部等级</option><option value="1">1级-轻微</option><option value="2">2级-中等</option><option value="3">3级-严重</option><option value="4">4级-危及安全</option></select>
+        <button class="btn ghost" id="btnKBReload">刷新</button>
+        <button class="btn primary" id="btnKBNew" disabled title="需 teacher/admin 登录">＋ 新增条目</button>
+        <span class="teach-note" id="kbRightHint"></span>
+      </div>
+    </div>
+    <div class="kb-form" id="kbForm" style="display:none">
+      <input type="hidden" id="kbFId">
+      <select id="kbFDisease"><option>裂缝</option><option>渗漏水</option><option>剥落掉块</option><option>衬砌错台</option><option>白华析出</option></select>
+      <select id="kbFLevel"><option value="1">1级-轻微</option><option value="2">2级-中等</option><option value="3">3级-严重</option><option value="4">4级-危及安全</option></select>
+      <input id="kbFBasis" class="url-input" placeholder="规范依据（标准条文精神）" maxlength="200">
+      <textarea id="kbFPlan" class="kb-plan" rows="3" placeholder="修复方案（多条用 ；或换行分隔）"></textarea>
+      <input id="kbFAction" class="url-input" placeholder="处置动作" maxlength="60">
+      <input id="kbFInterval" class="url-input" placeholder="复查/观测周期" maxlength="40">
+      <div class="kb-form-btns">
+        <button class="btn primary" id="btnKbSave">保存</button>
+        <button class="btn ghost" id="btnKbCancel">取消</button>
+        <span class="teach-note" id="kbFormMsg"></span>
+      </div>
+    </div>
+    <div class="table-wrap lb-table">
+      <table class="defect-table">
+        <thead><tr><th>类型</th><th>等级</th><th>规范依据</th><th>修复方案</th><th>处置动作</th><th>复查周期</th><th style="width:110px">操作</th></tr></thead>
+        <tbody id="kbBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ③ 数据库浏览 -->
+  <div class="panel">
+    <div class="panel-head">
+      <h2>③ 数据库浏览（SQLite · 只读）</h2>
+      <div class="teach-actions">
+        <select id="selDbTable"></select>
+        <input id="dbQ" class="url-input" placeholder="模糊搜索（文本列）" style="width:180px">
+        <button class="btn primary" id="btnDbQuery">查询</button>
+        <button class="btn ghost" id="btnDbReload">刷新</button>
+        <span class="teach-note" id="dbHint">teacher/admin 登录后可浏览</span>
+      </div>
+    </div>
+    <div class="teach-note" id="dbSchema" style="margin-bottom:6px">选择表后显示列结构与行数据（users.password 已脱敏）。</div>
+    <div class="table-wrap lb-table">
+      <table class="defect-table">
+        <thead id="dbHead"></thead>
+        <tbody id="dbBody"></tbody>
+      </table>
+    </div>
+    <div class="an-cfg" style="margin-top:8px">
+      <button class="btn ghost" id="btnDbPrev">◀ 上一页</button>
+      <span class="teach-note" id="dbPage">--</span>
+      <button class="btn ghost" id="btnDbNext">下一页 ▶</button>
+    </div>
+  </div>
+</section>
+
+<!-- 登录弹层 -->
+<div class="pg-modal-mask" id="loginModal" style="display:none">
+  <div class="pg-modal login-box">
+    <h3>平台登录（角色权限）</h3>
+    <p class="teach-note">固定演示账号：admin / teacher / student，口令统一 123456。<br>student 只读 · teacher 可维护知识库 · admin 管理用户（student 写操作会收到 403）。</p>
+    <div class="lg-quick">
+      <button class="btn ghost" data-user="admin">admin</button>
+      <button class="btn ghost" data-user="teacher">teacher</button>
+      <button class="btn ghost" data-user="student">student</button>
+    </div>
+    <label>用户名 <input id="lgName" class="url-input" placeholder="name"></label>
+    <label>口令 <input id="lgPwd" class="url-input" type="password" placeholder="123456"></label>
+    <div class="kb-form-btns">
+      <button class="btn primary" id="btnLgLogin">登 录</button>
+      <button class="btn ghost" id="btnLgClose">关闭</button>
+      <span class="teach-note" id="lgMsg"></span>
+    </div>
+  </div>
+</div>
+
+<!-- 样本详情弹层 -->
+<div class="pg-modal-mask" id="detailModal" style="display:none">
+  <div class="pg-modal detail-box">
+    <div class="panel-head" style="border:none">
+      <h2 id="dmTitle">样本详情</h2>
+      <div class="teach-actions">
+        <label class="teach-note" style="display:inline-flex;align-items:center;gap:4px">
+          <input type="checkbox" id="dmHeatCk"> 热力图叠加（Eigen-CAM）
+        </label>
+        <button class="btn ghost" id="dmClose">✕ 关闭</button>
+      </div>
+    </div>
+    <div class="dm-stage-wrap">
+      <div class="dm-stage" id="dmStage">
+        <img id="dmImg" alt="原图">
+        <img id="dmHeat" alt="热力图" style="display:none">
+        <canvas id="dmCanvas"></canvas>
+      </div>
+      <div class="dm-side">
+        <div class="teach-note" id="dmMeta"></div>
+        <div class="dm-list" id="dmList"></div>
+      </div>
+    </div>
+    <div class="teach-note" id="dmFoot">检测框为库内复核结果（auto_detect 自动入库/approved 科研复核通过/已审核）。热力图复用餐模块一链路实时生成。</div>
+  </div>
+</div>
+
+<footer class="footer">隧途明鉴 —— 隧道病害自动化巡检 · 智能分析 · 辅助决策全流程闭环（轻微病害自动审核，其余须人工审核后生效）</footer>
+
+<script src="app.js"></script>
+<script src="explain.js"></script>
+<script src="training.js"></script>
+<script src="portal.js"></script>
+</body>
+</html>

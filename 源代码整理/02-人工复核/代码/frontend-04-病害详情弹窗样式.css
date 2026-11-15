@@ -1,0 +1,88 @@
+/* ============================================================================
+ * 病害详情弹窗样式（CSS）：四区布局、图像与检出框叠加、状态色（待审核/通过/驳回）
+ * 出处：C:\Users\17355\.zcode\workspace\default\tunnel-inspection-system\docs\prototype-holo-core.html  第 438–521 行（原文照搬，仅加本表头）
+ * ========================================================================== */
+/* ---------- 病害详情弹窗（复核 / 台账点行展开） ----------
+   这层是「作业态」不是「展示态」：实底更重（.88/.92），因为背后可能是
+   亮色照片；圆环按钮和卡片仍可点，弹窗叠在最上（z 58，低于颗粒层 60）。 */
+#rvModal, #libModal{position:fixed; inset:0; z-index:58; display:none; padding:var(--gut);
+  background:rgba(3,6,16,.62); backdrop-filter:blur(3px); -webkit-backdrop-filter:blur(3px)}
+#rvModal.is-open, #libModal.is-open{display:flex; align-items:center; justify-content:center}
+/* 工作台检出 → 知识图谱学习确认浮层（z 高于详情弹窗，叠加时可盖住） */
+#kgAsk{position:fixed; inset:0; z-index:59; display:none; align-items:center; justify-content:center;
+  background:rgba(3,6,16,.55); backdrop-filter:blur(2px); -webkit-backdrop-filter:blur(2px)}
+#kgAsk.is-open{display:flex}
+/* 跳转定位脉冲：窄屏文档流滚动定位 / 宽屏抬卡后都给一次明确反馈 */
+.panel{scroll-margin-top:14px}
+.panel.flash{animation:panelFlash 1.6s ease}
+@keyframes panelFlash{
+  0%,100%{filter:none}
+  25%{filter:drop-shadow(0 0 22px rgba(46,168,208,.85)) brightness(1.18)}
+  60%{filter:drop-shadow(0 0 14px rgba(46,168,208,.5)) brightness(1.08)}
+}
+.kga-card{
+  width:min(430px, calc(100vw - 48px)); padding:22px 24px 18px;
+  border:1px solid var(--edge-mid); border-radius:14px;
+  background:linear-gradient(180deg, rgba(11,21,44,.94), rgba(7,13,30,.96));
+  backdrop-filter:blur(18px) saturate(130%); -webkit-backdrop-filter:blur(18px) saturate(130%);
+  box-shadow:0 30px 70px -24px rgba(3,6,16,.95), 0 0 70px -28px rgba(46,168,208,.5);
+  animation:kgaIn .22s ease both;
+}
+@keyframes kgaIn{from{opacity:0; transform:translateY(10px) scale(.97)} to{opacity:1; transform:none}}
+.kga-t{font-size:13px; letter-spacing:.1em; color:var(--ink-1); margin-bottom:10px;
+  padding-left:9px; border-left:3px solid var(--cy-3)}
+.kga-q{font-size:12.5px; line-height:1.9; color:var(--ink-2); margin-bottom:18px}
+.kga-q b{color:var(--cy-2); font-weight:600}
+.kga-btns{display:flex; gap:10px; justify-content:flex-end}
+.rvm{
+  width:min(880px,100%); max-height:min(88vh,880px); overflow:auto;
+  border:1px solid var(--edge-mid); border-radius:var(--r-panel);
+  background:linear-gradient(180deg, rgba(11,21,44,.88), rgba(7,13,30,.92));
+  backdrop-filter:blur(20px) saturate(130%); -webkit-backdrop-filter:blur(20px) saturate(130%);
+  box-shadow:0 40px 90px -30px rgba(3,6,16,.96), 0 0 90px -30px rgba(46,168,208,.45);
+}
+.rvm-head{display:flex; align-items:center; gap:10px; padding:13px 16px; border-bottom:1px solid var(--edge);
+  position:sticky; top:0; z-index:2;
+  background:linear-gradient(180deg, rgba(11,21,44,.97), rgba(11,21,44,.88)); backdrop-filter:blur(12px)}
+.rvm-head .no{font:400 10px/1 var(--f-mono); letter-spacing:.1em; color:var(--cy-3);
+  padding:3px 6px; border:1px solid var(--edge-mid); border-radius:5px}
+.rvm-head h3{margin:0; font-size:13px; font-weight:400; letter-spacing:.14em; color:var(--ink-1)}
+.rvm-head .st{margin-left:auto; font:400 10px/1 var(--f-mono); padding:3px 9px;
+  border:1px solid currentColor; border-radius:5px; letter-spacing:.1em}
+.rvm-x{flex:0 0 auto; width:26px; height:26px; display:flex; align-items:center; justify-content:center;
+  font:400 14px/1 var(--f-mono); color:var(--ink-3); background:rgba(9,16,36,.5);
+  border:1px solid var(--edge); border-radius:7px; cursor:pointer; transition:color .2s, border-color .2s}
+.rvm-x:hover{color:var(--hi); border-color:var(--edge-hi)}
+.rvm-body{display:grid; grid-template-columns:minmax(250px,400px) 1fr; gap:13px; padding:14px 16px 16px}
+.rvm-fig{position:relative; border:1px solid var(--edge); border-radius:10px; overflow:hidden;
+  background:#05080f; align-self:start}
+.rvm-fig img,.rvm-fig canvas{display:block; width:100%; height:auto}
+.rvm-bbox{position:absolute; border:1.5px solid var(--hi); border-radius:2px;
+  box-shadow:0 0 0 1px rgba(7,11,24,.55), 0 0 16px rgba(107,211,240,.45), 0 0 16px rgba(107,211,240,.45) inset}
+.rvm-cap{font:400 10px/1.7 var(--f-mono); color:var(--ink-4); padding:8px 11px;
+  border-top:1px solid var(--edge); letter-spacing:.03em; position:relative}
+.rvm-cols{display:flex; flex-direction:column; gap:11px; min-width:0}
+.rvm-sec{border:1px solid var(--edge); border-radius:10px; background:var(--glass); padding:11px 13px}
+.rvm-sec h4{margin:0 0 8px; font-size:10px; font-weight:400; letter-spacing:.24em; color:var(--ink-4)}
+.kv{display:flex; flex-wrap:wrap; gap:7px 22px}
+.kv div{min-width:0}
+.kv .k{font:400 9.5px/1 var(--f-mono); letter-spacing:.14em; color:var(--ink-4); display:block; padding-bottom:3px}
+.kv .v{font-size:12px; color:var(--ink-1); letter-spacing:.03em}
+.kv .v.mono{font-family:var(--f-mono); font-variant-numeric:tabular-nums}
+.rvm-ul{margin:0; padding-left:17px; font-size:11.5px; line-height:1.9; color:var(--ink-2)}
+.rvm-ul li::marker{color:var(--cy-3)}
+.rvm-basis{font-size:11px; line-height:1.85; color:var(--ink-3); margin:0; padding-left:17px}
+.rvm-basis li::marker{color:var(--ink-4)}
+.rvm-audit{display:flex; flex-wrap:wrap; gap:8px 18px; align-items:center}
+.rvm-audit .who{font-size:12px; color:var(--ink-1)}
+.rvm-audit .tm{font:400 10.5px/1 var(--f-mono); color:var(--ink-4)}
+.rvm-note{width:100%; margin-top:2px; resize:vertical; min-height:40px; font:400 11.5px/1.6 var(--f-sans);
+  color:var(--ink-1); background:rgba(5,9,20,.6); border:1px solid var(--edge); border-radius:8px;
+  padding:8px 10px; outline:none}
+.rvm-note:focus{border-color:var(--edge-hi)}
+.rvm-note::placeholder{color:var(--ink-4)}
+.rvm-acts{display:flex; gap:8px}
+@media (max-width:900px){
+  .rvm-body{grid-template-columns:1fr}
+}
+

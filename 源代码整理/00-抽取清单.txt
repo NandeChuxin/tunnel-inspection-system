@@ -1,0 +1,44 @@
+源码抽取清单（由 tools/build-source-package.js 生成，可随时重跑复核）
+生成时间：2026-09-17T02:24:16.018Z
+
+【01 检测方向 · 后端】
+✓ 01-检测方向\代码\vision-图像处理与PNG编解码.js   ← backend/vision.js（整文件）
+✓ 01-检测方向\代码\fusion-特征融合与病害分级.js   ← backend/fusion.js（整文件）
+✓ 01-检测方向\代码\infer-检测编排与DetectResult.js   ← backend/infer.js（整文件）
+✓ 01-检测方向\代码\model-训练模型推理(15维分类器).js   ← backend/model.js（整文件）
+✓ 01-检测方向\代码\mask-实例掩码(框内Otsu+连通域).js   ← backend/mask.js（整文件）
+✓ 01-检测方向\代码\detector-YOLOv8n-ONNX推理.js   ← backend/detector.js（整文件）
+✓ 01-检测方向\代码\intermediate-cache-中间产物缓存(TTL).js   ← backend/intermediate-cache.js（整文件）
+✓ 01-检测方向\代码\db-schema-数据库建表(image_detection等).sql   ← backend/db/schema.sql（整文件）
+
+【01 检测方向 · 训练与评测（backend/train/）】
+✓ 01-检测方向\代码\train-gen-dataset.js   ← backend/train/gen-dataset.js（整文件）
+✓ 01-检测方向\代码\train-build-samples.js   ← backend/train/build-samples.js（整文件）
+✓ 01-检测方向\代码\train-train.js   ← backend/train/train.js（整文件）
+✓ 01-检测方向\代码\train-train-mix.js   ← backend/train/train-mix.js（整文件）
+✓ 01-检测方向\代码\train-eval-real.js   ← backend/train/eval-real.js（整文件）
+✓ 01-检测方向\代码\train-ablation.js   ← backend/train/ablation.js（整文件）
+✓ 01-检测方向\代码\train-export-yolo.js   ← backend/train/export-yolo.js（整文件）
+
+【01 检测方向 · 前端（docs/prototype-holo-core.html 摘录）】
+✓ 01-检测方向\代码\frontend-01-检测工作台UI.html   ← prototype-holo-core.html L1194–1219
+✓ 01-检测方向\代码\frontend-02-Lab模块-检测逻辑.js   ← prototype-holo-core.html L2354–3119
+✓ 01-检测方向\代码\frontend-03-卡片01上传绑定.js   ← prototype-holo-core.html L4873–5044
+✓ 01-检测方向\代码\frontend-04-源码索引-接口摘录.js   ← server.js L267–310
+
+【02 人工复核 · 后端】
+✓ 02-人工复核\代码\store-病害台账JSON读写.js   ← backend/store.js（整文件）
+✓ 02-人工复核\代码\server-复核接口摘录.js   ← server.js L223–262
+
+【02 人工复核 · 前端（docs/prototype-holo-core.html 摘录）】
+✓ 02-人工复核\代码\frontend-01-工位04复核卡UI.html   ← prototype-holo-core.html L1283–1298
+✓ 02-人工复核\代码\frontend-02-复核队列逻辑.js   ← prototype-holo-core.html L3596–3647
+✓ 02-人工复核\代码\frontend-03-病害详情弹窗UI.html   ← prototype-holo-core.html L1516–1556
+✓ 02-人工复核\代码\frontend-04-病害详情弹窗样式.css   ← prototype-holo-core.html L438–521
+✓ 02-人工复核\代码\frontend-05-病害详情弹窗逻辑.js   ← prototype-holo-core.html L3648–3803
+✓ 02-人工复核\代码\frontend-06-刷新队列按钮.js   ← prototype-holo-core.html L5060–5090
+
+【附：复核数据从哪来（工具脚本）】
+✓ 02-人工复核\代码\tools-reopen-real-for-review-真实样本置回待复核.js   ← tools/reopen-real-for-review.js（整文件）
+✓ 02-人工复核\代码\tools-sync-real-batch2-to-ledger-SQLite真值写台账.js   ← tools/sync-real-batch2-to-ledger.js（整文件）
+

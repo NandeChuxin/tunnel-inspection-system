@@ -1,0 +1,2109 @@
+{
+ "report": {
+  "module": "tools/math/verify_equivalence.py",
+  "path_a_end_to_end": {
+   "n": 106,
+   "mismatch_type": 0,
+   "mismatch_level": 0,
+   "node_log": "{\"ok\":true,\"n\":106,\"mode\":\"rules\",\"classifier\":\"builtin\"}"
+  },
+  "path_b_level_function": {
+   "n": 89,
+   "mismatch": 0
+  },
+  "overall": {
+   "cases": 195,
+   "mismatches": 0,
+   "pass": true
+  }
+ },
+ "path_a_rows": [
+  {
+   "tag": "A-crack-W640-px60-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px60-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px60-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px150-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px150-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px150-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px219-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px219-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px219-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px260-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px260-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px260-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px500-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px500-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px500-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px731-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px731-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px731-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px1200-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px1200-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px1200-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px1500-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px1500-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px1500-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px2000-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px2000-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W640-px2000-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px60-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px60-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px60-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px150-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px150-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px150-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px219-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px219-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px219-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px260-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px260-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px260-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px500-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px500-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px500-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px731-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px731-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px731-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px1200-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px1200-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px1200-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px1500-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px1500-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px1500-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px2000-diagonal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "斜向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px2000-vertical",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "环向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-crack-W1280-px2000-horizontal",
+   "expect_type": "裂缝",
+   "js_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "纵向裂缝",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.05",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.19",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.2",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.35",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.49",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.5",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.8",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-1.5",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-2.1",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-4.0",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-拱顶-0.05",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-拱顶-0.19",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-拱顶-0.2",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-拱顶-0.35",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-拱顶-0.49",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-拱顶-0.5",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-拱顶-0.8",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-拱顶-1.5",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-拱顶-2.1",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-拱顶-4.0",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.05",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.19",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.2",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.35",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.49",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.5",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-0.8",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-1.5",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-2.1",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-seep-右边墙-4.0",
+   "expect_type": "渗漏水",
+   "js_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "湿渍",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-右边墙-0.02",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "表层剥落",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-右边墙-0.09",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "表层剥落",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-右边墙-0.1",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "表层剥落",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-右边墙-0.15",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "表层剥落",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-右边墙-0.5",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "掉块",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-右边墙-1.6",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "掉块",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-拱顶-0.02",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "表层剥落",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-拱顶-0.09",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "表层剥落",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-拱顶-0.1",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "表层剥落",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-拱顶-0.15",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "表层剥落",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-拱顶-0.5",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "掉块",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-spall-拱顶-1.6",
+   "expect_type": "剥落掉块",
+   "js_type": "剥落掉块",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "掉块",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-gap-3.0",
+   "expect_type": "衬砌错台",
+   "js_type": "衬砌错台",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "环向错台",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-gap-4.0",
+   "expect_type": "衬砌错台",
+   "js_type": "衬砌错台",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "环向错台",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-gap-8.0",
+   "expect_type": "衬砌错台",
+   "js_type": "衬砌错台",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "环向错台",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-gap-10.0",
+   "expect_type": "衬砌错台",
+   "js_type": "衬砌错台",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "环向错台",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-gap-15.0",
+   "expect_type": "衬砌错台",
+   "js_type": "衬砌错台",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "环向错台",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-gap-20.0",
+   "expect_type": "衬砌错台",
+   "js_type": "衬砌错台",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "环向错台",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-white-0.3",
+   "expect_type": "白华析出",
+   "js_type": "白华析出",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "钙质析出",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-white-0.99",
+   "expect_type": "白华析出",
+   "js_type": "白华析出",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "钙质析出",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-white-1.02",
+   "expect_type": "白华析出",
+   "js_type": "白华析出",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "钙质析出",
+   "ok_type": true,
+   "ok_level": true
+  },
+  {
+   "tag": "A-white-2.5",
+   "expect_type": "白华析出",
+   "js_type": "白华析出",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "钙质析出",
+   "ok_type": true,
+   "ok_level": true
+  }
+ ],
+ "path_b_rows": [
+  {
+   "tag": "B-crack-斜向裂缝-60px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "0.3m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-60px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "0.3m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-219px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "1.2m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-219px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 1,
+   "js_level": 1,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "1.2m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-220px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "1.2m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-220px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "1.2m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-731px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "4.0m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-731px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "4.0m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-732px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "4.0m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-732px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "4.0m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-1462px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "8.0m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-1462px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "8.0m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-1463px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "8.0m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-斜向裂缝-1463px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "斜向裂缝",
+   "physical": {
+    "长度": "8.0m",
+    "走向": "斜向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-60px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "0.3m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-60px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "0.3m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-219px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "1.2m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-219px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 2,
+   "js_level": 2,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "1.2m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-220px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "1.2m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-220px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "1.2m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-731px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "4.0m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-731px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 3,
+   "js_level": 3,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "4.0m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-1462px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "8.0m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-1462px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "8.0m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-1463px-拱顶",
+   "force_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "8.0m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-crack-纵向裂缝-1463px-右边墙",
+   "force_type": "裂缝",
+   "expect_level": 4,
+   "js_level": 4,
+   "js_subtype": "纵向裂缝",
+   "physical": {
+    "长度": "8.0m",
+    "走向": "纵向裂缝"
+   },
+   "ok": true
+  },
+  {
+   "tag": "B-渗漏水-右边墙-0.05-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "面积": "0.05m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.05
+  },
+  {
+   "tag": "B-渗漏水-右边墙-0.19-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "面积": "0.19m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.19
+  },
+  {
+   "tag": "B-渗漏水-右边墙-0.2-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "面积": "0.20m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.2
+  },
+  {
+   "tag": "B-渗漏水-右边墙-0.49-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "面积": "0.49m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.49
+  },
+  {
+   "tag": "B-渗漏水-右边墙-0.5-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.50m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.5
+  },
+  {
+   "tag": "B-渗漏水-右边墙-0.79-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.79m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.79
+  },
+  {
+   "tag": "B-渗漏水-右边墙-0.8-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.80m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.8
+  },
+  {
+   "tag": "B-渗漏水-右边墙-1.99-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "1.99m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 1.99
+  },
+  {
+   "tag": "B-渗漏水-右边墙-2.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "面积": "2.00m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 2.0
+  },
+  {
+   "tag": "B-渗漏水-右边墙-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "面积": "3.00m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 3.0
+  },
+  {
+   "tag": "B-渗漏水-拱顶-0.05-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "面积": "0.05m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.05
+  },
+  {
+   "tag": "B-渗漏水-拱顶-0.19-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "面积": "0.19m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.19
+  },
+  {
+   "tag": "B-渗漏水-拱顶-0.2-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.20m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.2
+  },
+  {
+   "tag": "B-渗漏水-拱顶-0.49-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.49m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.49
+  },
+  {
+   "tag": "B-渗漏水-拱顶-0.5-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.50m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.5
+  },
+  {
+   "tag": "B-渗漏水-拱顶-0.79-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.79m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.79
+  },
+  {
+   "tag": "B-渗漏水-拱顶-0.8-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "面积": "0.80m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.8
+  },
+  {
+   "tag": "B-渗漏水-拱顶-1.99-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "面积": "1.99m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 1.99
+  },
+  {
+   "tag": "B-渗漏水-拱顶-2.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "面积": "2.00m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 2.0
+  },
+  {
+   "tag": "B-渗漏水-拱顶-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "面积": "3.00m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 3.0
+  },
+  {
+   "tag": "B-渗漏水-拱顶-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {},
+   "ok": true,
+   "payload": 0.05
+  },
+  {
+   "tag": "B-渗漏水-拱顶-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {},
+   "ok": true,
+   "payload": 0.19
+  },
+  {
+   "tag": "B-渗漏水-拱顶-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {},
+   "ok": true,
+   "payload": 0.2
+  },
+  {
+   "tag": "B-渗漏水-拱顶-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {},
+   "ok": true,
+   "payload": 0.49
+  },
+  {
+   "tag": "B-渗漏水-拱顶-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {},
+   "ok": true,
+   "payload": 0.5
+  },
+  {
+   "tag": "B-渗漏水-拱顶-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {},
+   "ok": true,
+   "payload": 0.79
+  },
+  {
+   "tag": "B-渗漏水-拱顶-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {},
+   "ok": true,
+   "payload": 0.8
+  },
+  {
+   "tag": "B-渗漏水-拱顶-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {},
+   "ok": true,
+   "payload": 1.99
+  },
+  {
+   "tag": "B-渗漏水-拱顶-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {},
+   "ok": true,
+   "payload": 2.0
+  },
+  {
+   "tag": "B-渗漏水-拱顶-3.0-渗水",
+   "force_type": "渗漏水",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {},
+   "ok": true,
+   "payload": 3.0
+  },
+  {
+   "tag": "B-剥落掉块-右边墙-0.02-",
+   "force_type": "剥落掉块",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "面积": "0.02m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.02
+  },
+  {
+   "tag": "B-剥落掉块-右边墙-0.09-",
+   "force_type": "剥落掉块",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "面积": "0.09m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.09
+  },
+  {
+   "tag": "B-剥落掉块-右边墙-0.1-",
+   "force_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.10m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.1
+  },
+  {
+   "tag": "B-剥落掉块-右边墙-0.14-",
+   "force_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.14m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.14
+  },
+  {
+   "tag": "B-剥落掉块-右边墙-0.15-",
+   "force_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.15m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.15
+  },
+  {
+   "tag": "B-剥落掉块-右边墙-0.49-",
+   "force_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.49m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.49
+  },
+  {
+   "tag": "B-剥落掉块-右边墙-0.5-",
+   "force_type": "剥落掉块",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "面积": "0.50m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 0.5
+  },
+  {
+   "tag": "B-剥落掉块-右边墙-1.49-",
+   "force_type": "剥落掉块",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "面积": "1.49m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 1.49
+  },
+  {
+   "tag": "B-剥落掉块-右边墙-1.5-",
+   "force_type": "剥落掉块",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {
+    "面积": "1.50m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 1.5
+  },
+  {
+   "tag": "B-剥落掉块-右边墙-2.2-",
+   "force_type": "剥落掉块",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {
+    "面积": "2.20m²",
+    "部位": "边墙/仰拱"
+   },
+   "ok": true,
+   "payload": 2.2
+  },
+  {
+   "tag": "B-剥落掉块-拱顶-0.02-",
+   "force_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.02m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.02
+  },
+  {
+   "tag": "B-剥落掉块-拱顶-0.09-",
+   "force_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.09m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.09
+  },
+  {
+   "tag": "B-剥落掉块-拱顶-0.1-",
+   "force_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.10m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.1
+  },
+  {
+   "tag": "B-剥落掉块-拱顶-0.14-",
+   "force_type": "剥落掉块",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "0.14m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.14
+  },
+  {
+   "tag": "B-剥落掉块-拱顶-0.15-",
+   "force_type": "剥落掉块",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "面积": "0.15m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.15
+  },
+  {
+   "tag": "B-剥落掉块-拱顶-0.49-",
+   "force_type": "剥落掉块",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "面积": "0.49m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.49
+  },
+  {
+   "tag": "B-剥落掉块-拱顶-0.5-",
+   "force_type": "剥落掉块",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {
+    "面积": "0.50m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 0.5
+  },
+  {
+   "tag": "B-剥落掉块-拱顶-1.49-",
+   "force_type": "剥落掉块",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {
+    "面积": "1.49m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 1.49
+  },
+  {
+   "tag": "B-剥落掉块-拱顶-1.5-",
+   "force_type": "剥落掉块",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {
+    "面积": "1.50m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 1.5
+  },
+  {
+   "tag": "B-剥落掉块-拱顶-2.2-",
+   "force_type": "剥落掉块",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {
+    "面积": "2.20m²",
+    "部位": "拱部(从严)"
+   },
+   "ok": true,
+   "payload": 2.2
+  },
+  {
+   "tag": "B-衬砌错台-右边墙-0.0-",
+   "force_type": "衬砌错台",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "错台量": "0mm"
+   },
+   "ok": true,
+   "payload": 0.0
+  },
+  {
+   "tag": "B-衬砌错台-右边墙-2.9-",
+   "force_type": "衬砌错台",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "错台量": "2.9mm"
+   },
+   "ok": true,
+   "payload": 2.9
+  },
+  {
+   "tag": "B-衬砌错台-右边墙-3.0-",
+   "force_type": "衬砌错台",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "错台量": "3mm"
+   },
+   "ok": true,
+   "payload": 3.0
+  },
+  {
+   "tag": "B-衬砌错台-右边墙-7.9-",
+   "force_type": "衬砌错台",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "错台量": "7.9mm"
+   },
+   "ok": true,
+   "payload": 7.9
+  },
+  {
+   "tag": "B-衬砌错台-右边墙-8.0-",
+   "force_type": "衬砌错台",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "错台量": "8mm"
+   },
+   "ok": true,
+   "payload": 8.0
+  },
+  {
+   "tag": "B-衬砌错台-右边墙-14.9-",
+   "force_type": "衬砌错台",
+   "expect_level": 3,
+   "js_level": 3,
+   "physical": {
+    "错台量": "14.9mm"
+   },
+   "ok": true,
+   "payload": 14.9
+  },
+  {
+   "tag": "B-衬砌错台-右边墙-15.0-",
+   "force_type": "衬砌错台",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {
+    "错台量": "15mm"
+   },
+   "ok": true,
+   "payload": 15.0
+  },
+  {
+   "tag": "B-衬砌错台-右边墙-20.0-",
+   "force_type": "衬砌错台",
+   "expect_level": 4,
+   "js_level": 4,
+   "physical": {
+    "错台量": "20mm"
+   },
+   "ok": true,
+   "payload": 20.0
+  },
+  {
+   "tag": "B-白华析出-右边墙-0.3-",
+   "force_type": "白华析出",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "面积": "0.30m²"
+   },
+   "ok": true,
+   "payload": 0.3
+  },
+  {
+   "tag": "B-白华析出-右边墙-0.99-",
+   "force_type": "白华析出",
+   "expect_level": 1,
+   "js_level": 1,
+   "physical": {
+    "面积": "0.99m²"
+   },
+   "ok": true,
+   "payload": 0.99
+  },
+  {
+   "tag": "B-白华析出-右边墙-1.02-",
+   "force_type": "白华析出",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "1.02m²"
+   },
+   "ok": true,
+   "payload": 1.02
+  },
+  {
+   "tag": "B-白华析出-右边墙-1.5-",
+   "force_type": "白华析出",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "1.50m²"
+   },
+   "ok": true,
+   "payload": 1.5
+  },
+  {
+   "tag": "B-白华析出-右边墙-2.5-",
+   "force_type": "白华析出",
+   "expect_level": 2,
+   "js_level": 2,
+   "physical": {
+    "面积": "2.50m²"
+   },
+   "ok": true,
+   "payload": 2.5
+  }
+ ]
+}

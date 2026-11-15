@@ -1,0 +1,30 @@
+/* ============================================================================
+ * 工位 01 检测工作台 · 面板结构与控件（HTML，含 labFile 上传框 / labDrop 拖放区 / labCanvas 画布 / labList 检出列表）
+ * 出处：C:\Users\17355\.zcode\workspace\default\tunnel-inspection-system\docs\prototype-holo-core.html  第 1194–1219 行（原文照搬，仅加本表头）
+ * ========================================================================== */
+    <!-- ===== 工位 01 · 检测工作台（上传照片 / 视频 → 真实推理） ===== -->
+    <section class="panel p-lab is-active" data-p="lab">
+      <div class="cone" aria-hidden="true"></div>
+      <div class="ph" title="悬停转到正前 · 点击抬到核心正上方（再点收起）">
+        <span class="no">01</span><h2>检测工作台</h2>
+        <span class="meter" id="labMeter">上传即检</span>
+      </div>
+      <div class="pb">
+        <div class="drop drop-sm" id="orbDrop" tabindex="0" role="button" aria-label="选择或拖入照片视频">
+          <span class="di" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M4 16v2.5A1.5 1.5 0 005.5 20h13a1.5 1.5 0 001.5-1.5V16" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+          <div>
+            <div class="dt">点击选择 / 拖入 / Ctrl+V 粘贴照片或视频</div>
+            <div class="ds">JPG·PNG·MP4 → 逐帧真实推理（默认不落库）</div>
+          </div>
+          <input type="file" id="orbFile" accept="image/*,video/mp4,video/webm,video/quicktime" hidden>
+        </div>
+        <div class="mini-wrap" id="orbWrap" hidden><canvas id="orbCanvas" width="16" height="16"></canvas><span class="mini-tag" id="orbTag">照片</span></div>
+        <div class="orb-res" id="orbRes"><div class="lab-none">载入照片或视频后自动开始检测。</div></div>
+        <div class="ops">
+          <button class="btn" type="button" id="orbHeat">热力图分析</button>
+          <button class="btn" type="button" id="orbStop" hidden>停止视频</button>
+          <button class="btn" type="button" id="orbOpenLab">完整工作台</button>
+        </div>
+      </div>
+    </section>
+

@@ -1,0 +1,45 @@
+/* ============================================================================
+ * 病害详情弹窗 #rvModal 结构（HTML）：图像区 / 基本信息 / 判定依据 / 处置办法 + 人工审核区（备注 + 通过/驳回）
+ * 出处：C:\Users\17355\.zcode\workspace\default\tunnel-inspection-system\docs\prototype-holo-core.html  第 1516–1556 行（原文照搬，仅加本表头）
+ * ========================================================================== */
+
+<!-- ===== 病害详情弹窗（人工复核 / 台账点行展开；内容由 Modules.rvDetail 渲染） ===== -->
+<div id="rvModal" role="dialog" aria-modal="true" aria-label="病害详情" aria-hidden="true">
+  <div class="rvm">
+    <div class="rvm-head">
+      <span class="no" id="rvmNo">--</span>
+      <h3 id="rvmTitle">病害详情</h3>
+      <span class="st" id="rvmStatus">--</span>
+      <button class="rvm-x" type="button" id="rvmClose" aria-label="关闭详情">×</button>
+    </div>
+    <div class="rvm-body">
+      <div>
+        <div class="rvm-fig" id="rvmFig"><div class="lab-none">读取图像中…</div></div>
+        <div class="rvm-cap" id="rvmCap"></div>
+      </div>
+      <div class="rvm-cols">
+        <div class="rvm-sec">
+          <h4>基本信息</h4>
+          <div class="kv" id="rvmKv"></div>
+        </div>
+        <div class="rvm-sec">
+          <h4>判定依据</h4>
+          <ul class="rvm-basis" id="rvmBasis"></ul>
+        </div>
+        <div class="rvm-sec">
+          <h4>处置办法</h4>
+          <ul class="rvm-ul" id="rvmSug"></ul>
+          <div class="rvm-audit" id="rvmDecision" hidden></div>
+        </div>
+        <div class="rvm-sec">
+          <h4>人工审核</h4>
+          <div class="rvm-audit" id="rvmAudit"></div>
+        </div>
+      </div>
+      <div class="rvm-foot">
+        <button class="btn" type="button" id="rvmKg">查看知识图谱推理</button>
+        <span class="hint">等级依据 · 成因分析 · 结构危害 · 养护建议</span>
+      </div>
+    </div>
+  </div>
+</div>

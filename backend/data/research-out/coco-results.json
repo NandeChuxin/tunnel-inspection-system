@@ -1,0 +1,500 @@
+{
+ "info": {
+  "description": "隧途明鉴 batch inference",
+  "date_created": "2026-09-13T09:42:47.330Z"
+ },
+ "images": [
+  {
+   "id": 1,
+   "file_name": "0_1_004_10.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 2,
+   "file_name": "0_2_004_1.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 3,
+   "file_name": "1_1_001_26.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 4,
+   "file_name": "1_1_001_40.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 5,
+   "file_name": "1_1_002_30.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 6,
+   "file_name": "1_1_004_22.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 7,
+   "file_name": "1_1_007_22.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 8,
+   "file_name": "1_1_008_22.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 9,
+   "file_name": "1_1_011_22.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 10,
+   "file_name": "1_1_012_21.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 11,
+   "file_name": "1_1_013_33.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 12,
+   "file_name": "1_1_016_39.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 13,
+   "file_name": "1_1_017_22.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 14,
+   "file_name": "1_1_022_31.png",
+   "width": 640,
+   "height": 640
+  },
+  {
+   "id": 15,
+   "file_name": "1_1_029_22.png",
+   "width": 640,
+   "height": 640
+  }
+ ],
+ "annotations": [
+  {
+   "id": 1,
+   "image_id": 2,
+   "category_id": 1,
+   "bbox": [
+    0,
+    0,
+    240,
+    636.2
+   ],
+   "score": 0.77,
+   "area": 152678.4,
+   "iscrowd": 0
+  },
+  {
+   "id": 2,
+   "image_id": 3,
+   "category_id": 1,
+   "bbox": [
+    0,
+    0,
+    636.2,
+    72.3
+   ],
+   "score": 0.66,
+   "area": 46007.1,
+   "iscrowd": 0
+  },
+  {
+   "id": 3,
+   "image_id": 3,
+   "category_id": 1,
+   "bbox": [
+    576,
+    96,
+    60.2,
+    300.2
+   ],
+   "score": 0.98,
+   "area": 18057.6,
+   "iscrowd": 0
+  },
+  {
+   "id": 4,
+   "image_id": 3,
+   "category_id": 4,
+   "bbox": [
+    0,
+    179.8,
+    263.7,
+    192
+   ],
+   "score": 0.84,
+   "area": 50626.6,
+   "iscrowd": 0
+  },
+  {
+   "id": 5,
+   "image_id": 3,
+   "category_id": 1,
+   "bbox": [
+    515.8,
+    432,
+    60.2,
+    120.3
+   ],
+   "score": 0.6,
+   "area": 7238.5,
+   "iscrowd": 0
+  },
+  {
+   "id": 6,
+   "image_id": 3,
+   "category_id": 4,
+   "bbox": [
+    0,
+    456.3,
+    336,
+    179.8
+   ],
+   "score": 0.88,
+   "area": 60426.2,
+   "iscrowd": 0
+  },
+  {
+   "id": 7,
+   "image_id": 5,
+   "category_id": 3,
+   "bbox": [
+    0,
+    0,
+    179.8,
+    156.2
+   ],
+   "score": 0.89,
+   "area": 28083.8,
+   "iscrowd": 0
+  },
+  {
+   "id": 8,
+   "image_id": 5,
+   "category_id": 1,
+   "bbox": [
+    12.2,
+    275.8,
+    624,
+    360.3
+   ],
+   "score": 0.98,
+   "area": 224839.7,
+   "iscrowd": 0
+  },
+  {
+   "id": 9,
+   "image_id": 5,
+   "category_id": 4,
+   "bbox": [
+    432,
+    503.7,
+    204.2,
+    131.8
+   ],
+   "score": 0.86,
+   "area": 26916.5,
+   "iscrowd": 0
+  },
+  {
+   "id": 10,
+   "image_id": 6,
+   "category_id": 5,
+   "bbox": [
+    323.8,
+    0,
+    144,
+    144
+   ],
+   "score": 0.87,
+   "area": 20736,
+   "iscrowd": 0
+  },
+  {
+   "id": 11,
+   "image_id": 6,
+   "category_id": 1,
+   "bbox": [
+    179.8,
+    503.7,
+    48,
+    131.8
+   ],
+   "score": 0.91,
+   "area": 6328.3,
+   "iscrowd": 0
+  },
+  {
+   "id": 12,
+   "image_id": 7,
+   "category_id": 1,
+   "bbox": [
+    0,
+    0,
+    35.8,
+    156.2
+   ],
+   "score": 0.6,
+   "area": 5596.8,
+   "iscrowd": 0
+  },
+  {
+   "id": 13,
+   "image_id": 7,
+   "category_id": 1,
+   "bbox": [
+    0,
+    0,
+    636.2,
+    636.2
+   ],
+   "score": 0.89,
+   "area": 404699.5,
+   "iscrowd": 0
+  },
+  {
+   "id": 14,
+   "image_id": 7,
+   "category_id": 4,
+   "bbox": [
+    252.2,
+    336,
+    216.3,
+    168.3
+   ],
+   "score": 0.86,
+   "area": 36411,
+   "iscrowd": 0
+  },
+  {
+   "id": 15,
+   "image_id": 8,
+   "category_id": 1,
+   "bbox": [
+    0,
+    0,
+    636.2,
+    636.2
+   ],
+   "score": 0.74,
+   "area": 404699.5,
+   "iscrowd": 0
+  },
+  {
+   "id": 16,
+   "image_id": 9,
+   "category_id": 2,
+   "bbox": [
+    0,
+    0,
+    636.2,
+    636.2
+   ],
+   "score": 0.62,
+   "area": 404699.5,
+   "iscrowd": 0
+  },
+  {
+   "id": 17,
+   "image_id": 10,
+   "category_id": 2,
+   "bbox": [
+    0,
+    0,
+    636.2,
+    636.2
+   ],
+   "score": 0.85,
+   "area": 404699.5,
+   "iscrowd": 0
+  },
+  {
+   "id": 18,
+   "image_id": 11,
+   "category_id": 1,
+   "bbox": [
+    0,
+    12.2,
+    636.2,
+    204.2
+   ],
+   "score": 0.98,
+   "area": 129878.4,
+   "iscrowd": 0
+  },
+  {
+   "id": 19,
+   "image_id": 13,
+   "category_id": 1,
+   "bbox": [
+    288,
+    0,
+    120.3,
+    636.2
+   ],
+   "score": 0.97,
+   "area": 76542.8,
+   "iscrowd": 0
+  },
+  {
+   "id": 20,
+   "image_id": 13,
+   "category_id": 1,
+   "bbox": [
+    216.3,
+    444.2,
+    83.8,
+    192
+   ],
+   "score": 0.98,
+   "area": 16097.3,
+   "iscrowd": 0
+  },
+  {
+   "id": 21,
+   "image_id": 13,
+   "category_id": 1,
+   "bbox": [
+    432,
+    552.3,
+    35.8,
+    83.8
+   ],
+   "score": 0.77,
+   "area": 3004.8,
+   "iscrowd": 0
+  },
+  {
+   "id": 22,
+   "image_id": 14,
+   "category_id": 3,
+   "bbox": [
+    0,
+    0,
+    131.8,
+    480
+   ],
+   "score": 0.79,
+   "area": 63283.2,
+   "iscrowd": 0
+  },
+  {
+   "id": 23,
+   "image_id": 14,
+   "category_id": 1,
+   "bbox": [
+    371.8,
+    0,
+    263.7,
+    636.2
+   ],
+   "score": 0.87,
+   "area": 167742.7,
+   "iscrowd": 0
+  },
+  {
+   "id": 24,
+   "image_id": 15,
+   "category_id": 1,
+   "bbox": [
+    35.8,
+    0,
+    204.2,
+    636.2
+   ],
+   "score": 0.96,
+   "area": 129878.4,
+   "iscrowd": 0
+  },
+  {
+   "id": 25,
+   "image_id": 15,
+   "category_id": 5,
+   "bbox": [
+    503.7,
+    0,
+    131.8,
+    120.3
+   ],
+   "score": 0.81,
+   "area": 15863,
+   "iscrowd": 0
+  },
+  {
+   "id": 26,
+   "image_id": 15,
+   "category_id": 5,
+   "bbox": [
+    384,
+    72.3,
+    252.2,
+    216.3
+   ],
+   "score": 0.6,
+   "area": 54547.3,
+   "iscrowd": 0
+  },
+  {
+   "id": 27,
+   "image_id": 15,
+   "category_id": 5,
+   "bbox": [
+    227.8,
+    515.8,
+    120.3,
+    120.3
+   ],
+   "score": 0.68,
+   "area": 14476.9,
+   "iscrowd": 0
+  }
+ ],
+ "categories": [
+  {
+   "id": 1,
+   "name": "裂缝"
+  },
+  {
+   "id": 2,
+   "name": "渗漏水"
+  },
+  {
+   "id": 3,
+   "name": "剥落掉块"
+  },
+  {
+   "id": 4,
+   "name": "衬砌错台"
+  },
+  {
+   "id": 5,
+   "name": "白华析出"
+  }
+ ]
+}

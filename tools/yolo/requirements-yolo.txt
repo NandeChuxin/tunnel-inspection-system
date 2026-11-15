@@ -1,0 +1,18 @@
+# YOLO（Ultralytics）训练环境依赖
+# 安装：
+#   pip install -r tools/yolo/requirements-yolo.txt
+#
+# Windows / 无独显环境建议先装 CPU 版 torch（体积更小、无需 CUDA）：
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cpu
+#   pip install ultralytics
+#
+# 有 NVIDIA 显卡则用默认源安装 torch（自动带 CUDA 版）：
+#   pip install torch torchvision
+#   pip install ultralytics
+
+ultralytics>=8.3.0
+numpy>=1.24
+opencv-python>=4.8
+PyYAML>=6.0
+tqdm>=4.65
+matplotlib>=3.7

@@ -1,0 +1,44 @@
+{
+  "pass": 86,
+  "fail": 0,
+  "failures": [],
+  "runAt": "2026-09-10T10:30:37.995Z",
+  "base": "http://127.0.0.1:8797",
+  "samples": {
+    "login_ok": {
+      "label": "POST /api/auth/login(teacher)",
+      "status": 401,
+      "brief": "status 401"
+    },
+    "kb_list": {
+      "label": "GET /api/kb",
+      "status": 200,
+      "brief": "total 20"
+    },
+    "kb_create": {
+      "label": "POST /api/kb(teacher)",
+      "status": 200,
+      "brief": "kb_id 21"
+    },
+    "kb_update": {
+      "label": "PUT /api/kb/:id(teacher)",
+      "status": 200,
+      "brief": "status 200"
+    },
+    "detect_archive": {
+      "label": "POST /api/detect/image(tunnel)",
+      "status": "-",
+      "brief": "样本 8 张"
+    },
+    "samples_page": {
+      "label": "GET /api/samples?page=1&size=4",
+      "status": 200,
+      "brief": "total 8"
+    },
+    "samples_detail": {
+      "label": "GET /api/samples/:id",
+      "status": 200,
+      "brief": "detections 5"
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+ "data": "D:\\隧道检测\\tunnel-inspection-system\\yolo-workspace\\dataset-6class\\data.yaml",
+ "weights": "D:\\隧道检测\\tunnel-inspection-system\\yolo-workspace\\runs\\6class-yolov8n\\weights\\best.pt",
+ "imgsz": 640,
+ "epochs": 20,
+ "device": "cpu",
+ "mAP50": 0.6327593525982362,
+ "mAP50-95": 0.426522837071284,
+ "precision": 0.7151167409284362,
+ "recall": 0.6101063312542008,
+ "per_class_mAP50_95": {
+  "Spalling": 0.1747948868099068,
+  "Crack": 0.13713028967910795,
+  "Leakage": 0.36417236785466656,
+  "LiningOffset": 0.6172702537069105,
+  "Efflorescence": 0.8392463873058288
+ },
+ "per_class_AP50": {
+  "Spalling": 0.2592886759509229,
+  "Crack": 0.3184048129188526,
+  "Leakage": 0.6341920667186488,
+  "LiningOffset": 0.9665119602422934,
+  "Efflorescence": 0.9853992471604631
+ }
+}

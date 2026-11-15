@@ -1,0 +1,23 @@
+{
+  "name": "tunnel-inspection-system",
+  "version": "1.0.0",
+  "private": true,
+  "description": "隧途明鉴后端与 YOLOv8n ONNX 推理运行依赖",
+  "scripts": {
+    "start": "node start-preview.mjs",
+    "backend": "node backend/server.js",
+    "db:init": "node backend/db/migrate.js",
+    "test": "node backend/detector-quality-test.js && node backend/fusion-yolo-test.js && node backend/verify-base.js",
+    "test:fusion": "node backend/fusion-yolo-test.js",
+    "test:dataset": "node tools/yolo/verify-6class.js",
+    "test:smoke": "node backend/smoke-test.js",
+    "verify:model": "node tools/yolo/verify-model.js"
+  },
+  "dependencies": {},
+  "optionalDependencies": {
+    "onnxruntime-node": "^1.22.0"
+  },
+  "engines": {
+    "node": ">=22.5"
+  }
+}

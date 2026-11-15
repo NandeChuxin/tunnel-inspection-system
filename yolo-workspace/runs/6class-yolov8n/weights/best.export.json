@@ -1,0 +1,18 @@
+{
+ "weights": "D:\\隧道检测\\tunnel-inspection-system\\yolo-workspace\\runs\\6class-yolov8n\\weights\\best.pt",
+ "onnx": "D:\\隧道检测\\tunnel-inspection-system\\yolo-workspace\\runs\\6class-yolov8n\\weights\\best.onnx",
+ "imgsz": 640,
+ "opset": 12,
+ "dynamic": false,
+ "simplify": true,
+ "half": false,
+ "bytes": 12268942,
+ "names": {
+  "0": "Spalling",
+  "1": "Crack",
+  "2": "Leakage",
+  "3": "LiningOffset",
+  "4": "Efflorescence"
+ },
+ "task": "detect"
+}

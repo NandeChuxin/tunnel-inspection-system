@@ -1,0 +1,8 @@
+{
+  "systemRoot": "C:\\Users\\17355\\.zcode\\workspace\\default\\tunnel-inspection-system",
+  "nodeExecutable": "node",
+  "backendPort": 8787,
+  "webPort": 8899,
+  "healthUrl": "http://127.0.0.1:8787/api/health",
+  "workbenchUrl": "http://127.0.0.1:8899/prototype-holo-core.html"
+}
