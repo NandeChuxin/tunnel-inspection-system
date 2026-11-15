@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: tunnel-defect-ai
+    runtime: docker
+    plan: free
+    region: singapore
+    dockerfilePath: ./Dockerfile
+    envVars:
+      - key: NODE_ENV
+        value: production
